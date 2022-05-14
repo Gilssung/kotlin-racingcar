@@ -4,6 +4,7 @@ data class Car(val position: String = CAR_PROGRESS_CHAR) {
 
     companion object {
         private const val CAR_PROGRESS_CHAR = "-"
+<<<<<<< HEAD
         private const val GO_THRESHOLD_VALUE = 4
     }
 
@@ -13,6 +14,8 @@ data class Car(val position: String = CAR_PROGRESS_CHAR) {
         } else {
             this
         }
+=======
+>>>>>>> 1a814e9 (refactor: package 구성 변경)
     }
 
     fun go() : Car {
