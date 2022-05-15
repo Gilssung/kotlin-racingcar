@@ -4,11 +4,15 @@ import racing.model.Car
 <<<<<<< HEAD
 <<<<<<< HEAD
 import racing.model.Round
+<<<<<<< HEAD
 =======
 >>>>>>> 1a814e9 (refactor: package 구성 변경)
 =======
 import racing.model.Round
 >>>>>>> aec1086 (refactor: eachRoundMap 제거)
+=======
+import racing.model.Rounds
+>>>>>>> d5e48ee (test: Rounds 테스트 구현)
 
 class CarRacing(private val numberOfCars: Int, private val tries: Int) {
 
@@ -25,13 +29,16 @@ class CarRacing(private val numberOfCars: Int, private val tries: Int) {
         }
     }
 
-    fun start(): Map<Int, Round> {
-        val roundsMap = mutableMapOf<Int, Round>()
+    fun start(): Rounds {
+        val rounds = Rounds()
         repeat(tries) {
-            val prevRound = roundsMap[it - 1]
-            roundsMap[it] = getNextRound(prevRound, getRandom(numberOfCars), numberOfCars)
+            val prevRound = rounds.get(it - 1)
+            rounds.put(
+                it,
+                getNextRound(prevRound, getRandom(numberOfCars), numberOfCars)
+            )
         }
-        return roundsMap
+        return rounds
     }
 
 <<<<<<< HEAD

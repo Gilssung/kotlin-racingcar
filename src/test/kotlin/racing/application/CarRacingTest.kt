@@ -66,7 +66,7 @@ internal class CarRacingTest {
         val result = carRacing.start()
 
         //then
-        assertThat(result[firstRoundNo])
+        assertThat(result.get(firstRoundNo))
             .extracting("cars")
 =======
         val carRacing = CarRacing(3, 3)
@@ -107,6 +107,7 @@ internal class CarRacingTest {
         val racingResult = CarRacing(numberOfCars, tries).start()
 
         //then
+<<<<<<< HEAD
         assertThat(racingResult)
 =======
     fun `start method create each round result`(numberOfCars: Int, tries: Int) {
@@ -129,6 +130,9 @@ internal class CarRacingTest {
         //then
         assertThat(racingResult)
 >>>>>>> 4af0d69 (test: 테스트 수정 및 추가)
+=======
+        assertThat(racingResult.roundMap)
+>>>>>>> d5e48ee (test: Rounds 테스트 구현)
             .containsKeys(*expectedKeys)
             .containsEntry(0, expectedValue)
     }
