@@ -34,6 +34,7 @@ class CarRacing(private val numberOfCars: Int, private val tries: Int) {
         return roundsMap
     }
 
+<<<<<<< HEAD
     private fun getNextRound(prevRound: Round?, randomNumbers: List<Int>, numberOfCars: Int): Round =
         prevRound?.next(randomNumbers) ?: getFirstRound(numberOfCars)
 
@@ -73,4 +74,11 @@ class CarRacing(private val numberOfCars: Int, private val tries: Int) {
     private fun getNextRound(prevRound: Round?, randomNumbers: List<Int>, numberOfCars: Int): Round =
         prevRound?.next(randomNumbers) ?: getFirstRound(numberOfCars)
 >>>>>>> aec1086 (refactor: eachRoundMap 제거)
+=======
+    private fun getNextRound(prevRound: Round?, randomNumbers: List<Int>, numberOfCars: Int): Round =
+        prevRound?.next(randomNumbers) ?: getFirstRound(numberOfCars)
+
+    private fun getFirstRound(numberOfCars: Int): Round =
+        Round(List(numberOfCars) { Car() })
+>>>>>>> 6103f50 (refactor: 함수에서 랜덤값을 파라미터로 받게 함)
 }
